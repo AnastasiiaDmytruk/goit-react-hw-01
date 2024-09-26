@@ -8,7 +8,7 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.info}>
           <img className={styles.avatar} src={avatar} alt={tag} />
