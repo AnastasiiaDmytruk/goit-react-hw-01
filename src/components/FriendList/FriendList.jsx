@@ -1,24 +1,19 @@
+import FriendListItem from "../FriendListItem/FriendListItem";
 import styles from "./FriendList.module.css";
 
 const FriendList = ({ friends }) => {
   return (
-    <div className={styles.wrapper}>
+    <ul className={styles.wrapper}>
       {friends.map((friend) => (
-        <div className={styles.item} key={friend.id}>
-          <img
-            className={styles.avatar}
-            src={friend.avatar}
-            alt={friend.name}
-            width="48"
+        <li className={styles.item} key={friend.id}>
+          <FriendListItem
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
           />
-          <p className={styles.name}>{friend.name}</p>
-          <p className={friend.isOnline ? styles.online : styles.offline}>
-            {friend.isOnline ? "Online" : "Offline"}
-          </p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
-
 export default FriendList;
